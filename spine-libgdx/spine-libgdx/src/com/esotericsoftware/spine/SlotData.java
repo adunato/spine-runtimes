@@ -34,8 +34,9 @@ import com.badlogic.gdx.graphics.Color;
 
 /** Stores the setup pose for a {@link Slot}. */
 public class SlotData {
-	final int index;
-	final String name;
+	int index;
+	String name;
+
 	final BoneData boneData;
 	final Color color = new Color(1, 1, 1, 1);
 	Color darkColor;
@@ -104,4 +105,13 @@ public class SlotData {
 	public String toString () {
 		return name;
 	}
+
+	public void setIndex(int index) {
+		this.index = index;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 }

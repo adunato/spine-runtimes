@@ -42,6 +42,7 @@ import com.esotericsoftware.spine.attachments.Attachment;
  * <a href="http://esotericsoftware.com/spine-runtime-skins">Runtime skins</a> in the Spine Runtimes Guide. */
 public class Skin {
 	final String name;
+
 	final ObjectMap<Key, Attachment> attachments = new ObjectMap();
 	private final Key lookup = new Key();
 	final Pool<Key> keyPool = new Pool(64) {
@@ -146,4 +147,8 @@ public class Skin {
 			return slotIndex + ":" + name;
 		}
 	}
+	public ObjectMap<Key, Attachment> getAttachments() {
+		return attachments;
+	}
+
 }

@@ -34,8 +34,9 @@ import com.badlogic.gdx.graphics.Color;
 
 /** Stores the setup pose for a {@link Bone}. */
 public class BoneData {
-	final int index;
-	final String name;
+	int index;
+	String name;
+
 	final BoneData parent;
 	float length;
 	float x, y, rotation, scaleX = 1, scaleY = 1, shearX, shearY;
@@ -192,4 +193,12 @@ public class BoneData {
 
 		static public final TransformMode[] values = TransformMode.values();
 	}
+	public void setIndex(int index) {
+		this.index = index;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 }
