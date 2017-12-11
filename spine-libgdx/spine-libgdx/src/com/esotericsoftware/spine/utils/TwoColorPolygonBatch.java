@@ -31,16 +31,16 @@
 package com.esotericsoftware.spine.utils;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Mesh;
+import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.Mesh.VertexDataType;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.VertexAttribute;
 import com.badlogic.gdx.graphics.VertexAttributes.Usage;
+import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
+import com.badlogic.gdx.math.Affine2;
 import com.badlogic.gdx.math.Matrix4;
 
-public class TwoColorPolygonBatch {
+public class TwoColorPolygonBatch implements Batch{
 	private final Mesh mesh;
 	private final float[] vertices;
 	private final short[] triangles;
@@ -100,6 +100,91 @@ public class TwoColorPolygonBatch {
 		drawing = false;
 	}
 
+	@Override
+	public void setColor(Color color) {
+
+	}
+
+	@Override
+	public void setColor(float v, float v1, float v2, float v3) {
+
+	}
+
+	@Override
+	public void setColor(float v) {
+
+	}
+
+	@Override
+	public Color getColor() {
+		return null;
+	}
+
+	@Override
+	public float getPackedColor() {
+		return 0;
+	}
+
+	@Override
+	public void draw(Texture texture, float v, float v1, float v2, float v3, float v4, float v5, float v6, float v7, float v8, int i, int i1, int i2, int i3, boolean b, boolean b1) {
+
+	}
+
+	@Override
+	public void draw(Texture texture, float v, float v1, float v2, float v3, int i, int i1, int i2, int i3, boolean b, boolean b1) {
+
+	}
+
+	@Override
+	public void draw(Texture texture, float v, float v1, int i, int i1, int i2, int i3) {
+
+	}
+
+	@Override
+	public void draw(Texture texture, float v, float v1, float v2, float v3, float v4, float v5, float v6, float v7) {
+
+	}
+
+	@Override
+	public void draw(Texture texture, float v, float v1) {
+
+	}
+
+	@Override
+	public void draw(Texture texture, float v, float v1, float v2, float v3) {
+
+	}
+
+	@Override
+	public void draw(Texture texture, float[] floats, int i, int i1) {
+
+	}
+
+	@Override
+	public void draw(TextureRegion textureRegion, float v, float v1) {
+
+	}
+
+	@Override
+	public void draw(TextureRegion textureRegion, float v, float v1, float v2, float v3) {
+
+	}
+
+	@Override
+	public void draw(TextureRegion textureRegion, float v, float v1, float v2, float v3, float v4, float v5, float v6, float v7, float v8) {
+
+	}
+
+	@Override
+	public void draw(TextureRegion textureRegion, float v, float v1, float v2, float v3, float v4, float v5, float v6, float v7, float v8, boolean b) {
+
+	}
+
+	@Override
+	public void draw(TextureRegion textureRegion, float v, float v1, Affine2 affine2) {
+
+	}
+
 	public void draw (Texture texture, float[] polygonVertices, int verticesOffset, int verticesCount, short[] polygonTriangles,
 		int trianglesOffset, int trianglesCount) {
 		if (!drawing) throw new IllegalStateException("begin must be called before draw.");
@@ -138,6 +223,16 @@ public class TwoColorPolygonBatch {
 
 		vertexIndex = 0;
 		triangleIndex = 0;
+	}
+
+	@Override
+	public void disableBlending() {
+
+	}
+
+	@Override
+	public void enableBlending() {
+
 	}
 
 	public void dispose () {
@@ -197,6 +292,21 @@ public class TwoColorPolygonBatch {
 		}
 	}
 
+	@Override
+	public ShaderProgram getShader() {
+		return null;
+	}
+
+	@Override
+	public boolean isBlendingEnabled() {
+		return false;
+	}
+
+	@Override
+	public boolean isDrawing() {
+		return false;
+	}
+
 	/** Flushes the batch if the blend function was changed. */
 	public void setBlendFunction (int srcFunc, int dstFunc) {
 		setBlendFunctionSeparate(srcFunc, dstFunc, srcFunc, dstFunc);
@@ -211,6 +321,26 @@ public class TwoColorPolygonBatch {
 		blendDstFunc = dstFuncColor;
 		blendSrcFuncAlpha = srcFuncAlpha;
 		blendDstFuncAlpha = dstFuncAlpha;
+	}
+
+	@Override
+	public int getBlendSrcFunc() {
+		return 0;
+	}
+
+	@Override
+	public int getBlendDstFunc() {
+		return 0;
+	}
+
+	@Override
+	public int getBlendSrcFuncAlpha() {
+		return 0;
+	}
+
+	@Override
+	public int getBlendDstFuncAlpha() {
+		return 0;
 	}
 
 	private ShaderProgram createDefaultShader () {
